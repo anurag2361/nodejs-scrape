@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-scrape",
+  "version": "0.1.0",
+  "description": "Scrapes first 10 images from Google according to a given keyword, convert them to grayscale and save them.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Anurag Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "images-scraper": "^2.0.11",
+    "jimp": "^0.6.4"
+  }
+}
