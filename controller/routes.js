@@ -12,11 +12,11 @@ router.get("/image/:keyword", (req, res) => {
     }).then((result) => {
         for (i of result) {
             let uid = crypto.randomBytes(5).toString("hex");
-            jimp.read(i.url, (err, result) => {
+            jimp.read(i.url, async (err, result) => {
                 if (err) throw err;
-                result.resize(50, 50);
-                result.grayscale();
-                result.write(uid + '.jpg');
+                await result.resize(50, 50);
+                await result.grayscale();
+                await result.write(uid + '.jpg');
             });
         }
         res.send("done");
